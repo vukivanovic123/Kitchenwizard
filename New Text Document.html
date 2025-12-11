@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Kitchen wizard</title>
+  <style>
+    body { font-family: Arial; margin: 20px; }
+    .product { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; width: 250px; }
+    .cart-box { border: 1px solid #333; padding: 10px; margin-top: 20px; }
+    button { margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+<h1>Kitchen wizard</h1>
+<p>Vasi omiljeni kuhinjski proizvodi.</p>
+
+<div class="proizvod">
+  <h3>Viljuška</h3>
+  <p>Cena: $3</p>
+  <button onclick="addToCart('Viljuška', 3)">Dodaj u korpu</button>
+</div>
+
+<div class="proizvod">
+  <h3>Kašika</h3>
+  <p>Cena: $5</p>
+  <button onclick="addToCart('Kašika', 5)">Dodaj u korpu</button>
+</div>
+
+<div class="cart-box">
+  <h2>Vaša korpa</h2>
+  <div id="cart"></div>
+  <p><strong>Ukupno: $<span id="total">0</span></strong></p>
+</div>
+
+<script>
+  let total = 0;
+  let cartList = "";
+
+  function addToCart(name, price) {
+    cartList += name + " - $" + price + "<br>";
+    total += price;
+
+    document.getElementById("cart").innerHTML = cartList;
+    document.getElementById("total").innerText = total;
+  }
+</script>
+
+<footer style="margin-top: 30px; padding: 15px; border-top: 1px solid #ccc;">
+  <p>Kontakt:</p>
+  <p>Email: <a href="mailto:viljuskeikasike@gmail.com">viljuskeikasike@gmail.com</a></p>
+  <p>Telefon: <a href="tel:+381601234567">+381 60 123 4567</a></p>
+</footer>
+
+
+</body>
+</html>
